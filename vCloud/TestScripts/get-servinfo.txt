@@ -1,0 +1,12 @@
+dc01.kvcloud.local
+dc02.kvcloud.local
+radmin.kvcloud.local
+veeam-em01.kvcloud.local
+Veeam-repo01.kvcloud.local
+Veeam-repo02.kvcloud.local
+VeeamCloud01.kvcloud.local
+VeeamCloud02.kvcloud.local
+veeamcloud03.kvcloud.local
+VeeamCloud04.kvcloud.local
+veeamcloud05.kvcloud.local
+veeammssql01.kvcloud.local
