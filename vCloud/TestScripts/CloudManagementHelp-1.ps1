@@ -10,3 +10,6 @@ Get-VMHost | Select-Object name, state, ConnectionState, Manufacturer, Model, Nu
 get-vm zabbix01 | Select-Object *
 Get-VDSwitch | Select-Object *
 
+$serverlist=Get-Content C:\Users\oldubel\Documents\PowerShell\vCloud\TestScripts\get-servinfo.txt
+$ss=New-PSSession -Credential (Get-Credential -Message ggg -UserName oldubel@kvcloud.local) -ComputerName $serverlist
+#https://business.vodafone.ua/produkty/infrastructure-as-a-service

@@ -1,7 +1,7 @@
-$RootCred=New-VICredentialStoreItem -Host incloud.vodafone.ua -User sasha@kvcloud.local -Password 'Seag16'
+$RootCred=New-VICredentialStoreItem -Host incloud.vodafone.ua -User sasha@kvcloud.local -Password 'Sea'
 
 Connect-CIServer -Server $RootCred.Host -User $RootCred.User -Password $RootCred.Password
-Connect-CIServer -Server incloud.vodafone.ua -User sasha@kvcloud.local -Password 'Seag16'
+Connect-CIServer -Server incloud.vodafone.ua -User sasha@kvcloud.local -Password 'Seag'
 
 Tenant TestSasha
 alex

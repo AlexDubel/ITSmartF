@@ -46,7 +46,7 @@ Function New-CIUser {
 
         $vcloud = $DefaultCIServers[0].ExtensionData
        
-        $orgAdminRole = $vcloud.RoleReferences.RoleReference | where {$_.Name -eq $Role}
+        $orgAdminRole = $vcloud.RoleReferences.RoleReference | Where-Object {$_.Name -eq $Role}
         $orgAdminUser.Role = $orgAdminRole
        
         $user = $orgED.CreateUser($orgAdminUser)
@@ -95,11 +95,17 @@ Function New-OrgVDC {
     }
 }
 
-# Connect to our Cloud Infrastructure
-#Connect-CIServer -Server incloud.vodafone.ua -Port 9443 -User sasha@kvcloud.local -Password 'Seagate16TB+BACKUP$'
+Function Connect-ToTestCloud {
+    $cred = Get-Credential -Message "Enter credentials to connect to TEST incloud.vodafone.ua" -UserName sasha@kvcloud.local
+    Connect-CIServer -Server incloud.vodafone.ua -Port 9443 -Credential $cred 
+
+}
+
+#Connect-ToTestCloud
 
 ## Create a new Org
- #New-Org -Name "NewOrg1" -FullName "newOrg-02-Feb-2021" -Description "Тестовая организация 2 Дубель Саша дата создания 02-фев-2021" -Enabled
+#Write-Host "newOrg-02-Feb-2021" -Description "Тестовая организация №2 Дубель Саша дата создания $(get-date)"
+#New-Org -Name "NewOrg1" -FullName "newOrg-02-Feb-2021" -Description "Тестовая организация 2 Дубель Саша дата создания $(get-date)" -Enabled
 ##New-Org -Name "PowerCLIRocks" -FullName "PowerCLI Rocks hard!" -description "PowerCLI really rocks hard." -Enabled
 
 # Create a new Administrator for that Org

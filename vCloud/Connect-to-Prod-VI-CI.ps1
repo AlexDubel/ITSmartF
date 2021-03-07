@@ -10,7 +10,7 @@ $cred=(Get-Credential -Message "Please enter password to connect to Cloud Direct
     try    {    #Connect-CIServer -Server incloud.vodafone.ua -User $cred.UserName -Password $cred.Password -ErrorAction Stop;
                 #Connect-VIServer -Server incloud.vodafone.ua -User $cred.UserName -Password $cred.Password -ErrorAction Stop;
                 Connect-CIServer -Server incloud.vodafone.ua -Credential $cred -ErrorAction Stop;
-                Connect-VIServer -Server vcm01.vodafone.ua -Credential $cred -ErrorAction Stop;
+                Connect-VIServer -Server vcm01.kvcloud.local -Credential $cred -ErrorAction Stop;
             
             
             }
